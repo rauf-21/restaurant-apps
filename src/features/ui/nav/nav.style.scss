@@ -1,0 +1,109 @@
+@use '../../shared/styles/variables';
+@use '../links/links.style.scss';
+@use '../buttons/buttons.style.scss';
+
+#drawer {
+  box-sizing: border-box;
+  height: 100vh !important;
+  padding: variables.$spacing-sm;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  transform: translate(-110vw, 0);
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
+  overflow: hidden;
+
+  &.open {
+    transform: translate(0, 0);
+  }
+
+  & > ul {
+    display: flex;
+    margin-top: variables.$spacing-md;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+
+    & > li {
+      width: 100%;
+      padding: variables.$spacing-md;
+      text-transform: uppercase;
+      font-size: variables.$font-size-md;
+      border: 1px solid black;
+
+      & > a {
+        text-align: center;
+      }
+
+      &:first-child {
+        border-top: 2px solid black;
+      }
+
+      &:last-child {
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+}
+
+#drawer-show-button,
+#drawer-close-button {
+  @include buttons.button;
+  display: flex;
+  margin-left: auto;
+  flex-direction: center;
+  padding: 4px;
+}
+
+#drawer-close-button {
+  margin-top: 22px;
+}
+
+ui-nav {
+  height: 80px;
+  padding: variables.$spacing-sm;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: variables.$spacing-sm;
+  font-size: variables.$font-size-sm;
+
+  & > h1 {
+    font-size: variables.$font-size-md;
+  }
+
+  & > ul {
+    margin-left: auto;
+    display: flex;
+    justify-self: flex-end;
+    gap: variables.$spacing-md;
+    font-size: variables.$font-size-md;
+
+    li {
+      display: none;
+      list-style: none;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$screen-md) {
+  #drawer {
+    display: none;
+  }
+
+  #drawer-show-button,
+  #drawer-close-button {
+    display: none;
+  }
+
+  ui-nav {
+    & > ul {
+      li {
+        display: block;
+      }
+    }
+  }
+}

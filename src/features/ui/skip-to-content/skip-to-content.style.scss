@@ -1,0 +1,22 @@
+@use '../buttons/buttons.style.scss';
+@use '../links/links.style.scss';
+
+ui-skip-to-content {
+  position: absolute;
+  top: -60px;
+  left: 18px;
+  transition: all 0.3s ease-in-out;
+
+  &:focus-within {
+    top: 25px;
+    outline: none;
+  }
+
+  & > a.link {
+    @include buttons.button;
+    @include buttons.button--solid;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

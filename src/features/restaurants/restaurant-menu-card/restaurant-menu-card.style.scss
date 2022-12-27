@@ -1,0 +1,30 @@
+@use '../../shared/styles/variables';
+
+restaurant-menu-card {
+  width: 40%;
+  max-width: 130px;
+  min-height: 180px;
+  padding: variables.$spacing-sm;
+  display: flex;
+  flex-direction: column;
+  gap: variables.$spacing-sm;
+  background-color: lighten(variables.$secondary, 35%);
+  border-radius: variables.$radius-md;
+
+  & > img {
+    width: 100%;
+    min-height: 60%;
+  }
+
+  & > p {
+    width: 100%;
+    margin: auto 0;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: variables.$screen-md) {
+  restaurant-menu-card {
+    max-width: 150px;
+  }
+}

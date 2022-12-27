@@ -1,0 +1,76 @@
+@use '../../shared/styles/variables';
+
+@mixin button {
+  min-width: 44px;
+  min-height: 44px;
+  width: max-content;
+  padding: variables.$spacing-sm * 0.2 variables.$spacing-sm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: variables.$spacing-sm;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: variables.$font-size-md;
+  border-radius: variables.$radius-md;
+  text-decoration: none;
+
+  &:focus {
+    outline: solid 2px variables.$information !important;
+  }
+}
+
+@mixin button--solid {
+  background-color: lighten(variables.$primary, 5%);
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateX(5px) translateY(-8px);
+    box-shadow: -5px 5px black;
+  }
+}
+
+@mixin button--danger {
+  @include button--solid;
+
+  background-color: lighten(variables.$danger, 15%);
+  color: black;
+  border: 2px solid black;
+}
+
+@mixin button--ghost {
+  background-color: rgba($color: #000000, $alpha: 0);
+  border: 2px solid variables.$primary;
+  color: variables.$primary;
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba($color: #000000, $alpha: 0) 50%,
+    variables.$primary 50%
+  );
+  transition: background-position 0.3s;
+
+  &:hover {
+    color: black;
+    background-position: -100% 0;
+  }
+}
+
+.button {
+  @include button;
+}
+
+.button--solid {
+  @include button--solid;
+}
+
+.button--danger {
+  @include button--danger;
+}
+
+.button--ghost {
+  @include button--ghost;
+}

@@ -1,0 +1,18 @@
+@use '../../shared/styles/variables';
+
+ui-loading {
+  display: flex;
+  flex-direction: row;
+  gap: variables.$spacing-sm;
+}
+
+.spinner {
+  transform-origin: center;
+  animation: spinner_KYSC 0.75s infinite linear;
+}
+
+@keyframes spinner_KYSC {
+  100% {
+    transform: rotate(360deg);
+  }
+}

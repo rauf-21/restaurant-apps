@@ -1,0 +1,86 @@
+@use '../../shared/styles/variables';
+@use '../buttons/buttons.style.scss';
+
+ui-hero {
+  height: calc(100vh - 104px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: variables.$spacing-md;
+
+  & > img {
+    width: 100%;
+    height: 40%;
+    min-width: 1000px;
+    object-fit: cover;
+  }
+
+  #hero-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: variables.$spacing-md;
+
+    & > h1 {
+      font-size: variables.$font-size-lg;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    & > p {
+      font-size: variables.$font-size-md;
+      text-align: center;
+    }
+
+    & > a {
+      @include buttons.button;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  ui-hero {
+    & > img {
+      min-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$screen-md) {
+  ui-hero {
+    #{&}-content {
+      margin-right: 0;
+      box-sizing: border-box;
+      padding: 0 variables.$spacing-sm;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$screen-md) {
+  ui-hero {
+    #{&}-content {
+      padding: variables.$spacing-md 0;
+      box-sizing: border-box;
+
+      & > h1 {
+        font-size: variables.$font-size-lg;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      & > p {
+        font-size: variables.$font-size-md;
+        text-align: center;
+      }
+
+      & > button {
+        @include buttons.button;
+        margin: 0 auto;
+        font-size: variables.$font-size-sm;
+      }
+    }
+  }
+}

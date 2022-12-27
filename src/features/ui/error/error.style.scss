@@ -1,0 +1,23 @@
+@use '../../shared/styles/variables';
+
+ui-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: variables.$spacing-lg;
+  padding: 0 variables.$spacing-sm;
+
+  & > img {
+    width: 200px;
+  }
+
+  & > p {
+    border-radius: variables.$radius-sm;
+    color: white;
+    font-weight: 600;
+    background-color: variables.$danger;
+    padding: variables.$spacing-sm;
+    text-align: center;
+    font-size: variables.$font-size-md * 1.2;
+  }
+}

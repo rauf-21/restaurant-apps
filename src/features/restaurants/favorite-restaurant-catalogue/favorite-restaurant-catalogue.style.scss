@@ -1,0 +1,21 @@
+@use '../../shared/styles/variables';
+
+favorite-restaurant-catalogue {
+  width: 100%;
+  height: calc(100vh - 104px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 variables.$spacing-sm;
+  box-sizing: border-box;
+
+  & > h1 {
+    margin: variables.$spacing-lg 0;
+    text-align: center;
+    scroll-margin-top: variables.$spacing-lg;
+  }
+}
+
+#restaurant-list {
+  margin: auto variables.$spacing-sm;
+}

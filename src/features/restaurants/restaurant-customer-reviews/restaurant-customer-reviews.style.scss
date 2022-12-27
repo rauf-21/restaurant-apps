@@ -1,0 +1,96 @@
+@use '../../shared/styles/variables';
+@use '../../ui/inputs/inputs.style.scss';
+@use '../../ui/labels/labels.style.scss';
+
+restaurant-customer-reviews {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > h1 {
+    margin: variables.$spacing-sm;
+    text-align: center;
+  }
+}
+
+#restaurant-customer-reviews {
+  margin: variables.$spacing-lg 0;
+  padding: 0 variables.$spacing-sm;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: variables.$spacing-sm;
+
+  & > form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: variables.$spacing-sm;
+
+    & > textarea {
+      resize: vertical;
+    }
+
+    & > button {
+      margin-left: auto;
+    }
+  }
+}
+
+.restaurant-customer-review {
+  padding: variables.$spacing-sm;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+
+  &-name-and-date {
+    margin-bottom: variables.$spacing-sm;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-name {
+    font-weight: 800;
+  }
+
+  &-date {
+    margin-left: variables.$spacing-sm;
+    min-width: max-content;
+    font-size: variables.$font-size-sm;
+  }
+
+  & > p {
+    padding: variables.$spacing-sm;
+    background-color: lighten(variables.$secondary, 35%);
+    border-radius: variables.$radius-sm;
+  }
+}
+
+@media screen and (min-width: variables.$screen-md) {
+  #restaurant-customer-reviews {
+    & > form {
+      width: 75%;
+    }
+  }
+
+  .restaurant-customer-review {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: variables.$screen-lg) {
+  #restaurant-customer-reviews {
+    & > form {
+      width: 50%;
+    }
+  }
+
+  .restaurant-customer-review {
+    width: 50%;
+  }
+}

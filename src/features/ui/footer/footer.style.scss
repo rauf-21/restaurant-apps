@@ -1,0 +1,10 @@
+@use '../../shared/styles/variables';
+
+ui-footer {
+  padding: variables.$spacing-sm;
+  background-color: black;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  justify-content: center;
+}

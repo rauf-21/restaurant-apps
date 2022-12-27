@@ -1,0 +1,106 @@
+@use '../../shared/styles/variables';
+@use '../../ui/description-list/description-list.style.scss';
+@use '../../ui/tags/tags.style.scss';
+
+restaurant-detail {
+  width: 100%;
+  min-height: calc(100vh - 104px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#restaurant-picture-and-information {
+  min-height: calc(100vh - 104px);
+  display: flex;
+  height: max-content;
+  flex-direction: column;
+
+  & > img {
+    width: 100%;
+    height: 40%;
+  }
+}
+
+#restaurant-information {
+  padding: 0 variables.$spacing-sm;
+
+  h1 {
+    margin: variables.$spacing-sm;
+    text-align: center;
+  }
+
+  #{&}-header {
+    margin: variables.$spacing-sm 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: variables.$spacing-sm;
+  }
+}
+
+#restaurant-menu {
+  margin: variables.$spacing-lg 0;
+  padding: 0 variables.$spacing-sm;
+
+  & > h1 {
+    margin: variables.$spacing-sm 0;
+    text-align: center;
+  }
+
+  & > h2 {
+    margin-top: variables.$spacing-lg;
+    margin-bottom: variables.$spacing-sm;
+    text-align: center;
+  }
+
+  #{&}-food-list,
+  #{&}-drink-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: variables.$spacing-lg;
+  }
+}
+
+@media screen and (min-width: variables.$screen-md) {
+  #restaurant-picture-and-information {
+    display: flex;
+    flex-direction: row;
+
+    & > img {
+      border-radius: variables.$radius-md;
+      margin: auto variables.$spacing-sm;
+      display: block;
+      width: 50%;
+      height: 70vh;
+      object-fit: cover;
+    }
+  }
+
+  #restaurant-information {
+    margin: auto 0;
+
+    & > h1 {
+      text-align: start;
+    }
+
+    #{&}-header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$screen-lg) {
+  #restaurant-information {
+    #{&}-header {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

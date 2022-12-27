@@ -1,0 +1,31 @@
+@use '../../shared/styles/variables';
+
+restaurant-catalogue {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > h1 {
+    margin: variables.$spacing-lg 0;
+    text-align: center;
+    scroll-margin-top: variables.$spacing-lg;
+  }
+}
+
+#restaurant-list {
+  margin: auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: variables.$spacing-md;
+}
+
+@media screen and (min-width: variables.$screen-md) {
+  #restaurant-list {
+    row-gap: variables.$spacing-xl;
+  }
+}

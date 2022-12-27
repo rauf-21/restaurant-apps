@@ -1,0 +1,26 @@
+@use '../../shared/styles/variables';
+
+@mixin link {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: variables.$primary;
+    text-decoration-thickness: 4px;
+  }
+
+  &:focus {
+    outline: solid 2px variables.$information;
+  }
+}
+
+.link {
+  @include link;
+}

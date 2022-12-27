@@ -1,0 +1,82 @@
+@use '../../shared/styles/variables';
+
+restaurant-preview-card {
+  min-width: 250px;
+  max-width: 305px;
+  height: 400px;
+  margin: 0 variables.$spacing-sm;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: variables.$radius-md;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  & > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+.restaurant-card-description {
+  margin-top: auto;
+  padding: variables.$spacing-sm;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  color: white;
+  gap: variables.$spacing-sm;
+  border-top: 5px solid variables.$primary;
+
+  & > h2 {
+    font-weight: 900;
+    font-size: variables.$font-size-md;
+  }
+
+  & > a {
+    display: flex;
+    align-self: flex-end;
+  }
+}
+
+.restaurant-card-rating-and-city {
+  display: flex;
+  flex-direction: row;
+  gap: variables.$spacing-md;
+
+  & > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: variables.$spacing-sm * 0.5;
+  }
+}
+
+.restaurant-card-rating {
+  & > svg {
+    color: variables.$primary;
+  }
+}
+
+.restaurant-card-city {
+  & > svg {
+    color: variables.$danger;
+  }
+}
+
+@media screen and (min-width: variables.$screen-md) {
+  ui-restaurant-card {
+    max-width: 40%;
+  }
+}
+
+@media screen and (min-width: variables.$screen-lg) {
+  ui-restaurant-card {
+    max-width: 25%;
+  }
+}

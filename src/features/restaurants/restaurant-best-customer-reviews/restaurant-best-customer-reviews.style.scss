@@ -1,0 +1,152 @@
+@use '../../shared/styles/variables';
+
+restaurant-best-customer-reviews {
+  background-image: url('../../../public/images/waves/best-customer-review-blob-scatter.svg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  margin-top: variables.$spacing-lg;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 variables.$spacing-sm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  & > h1 {
+    text-align: center;
+    margin: variables.$spacing-lg 0;
+    scroll-margin-top: variables.$spacing-lg;
+  }
+}
+
+#restaurant-best-customer-reviews-carousel {
+  width: 100%;
+  margin: auto 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  & > button {
+    display: none;
+  }
+}
+
+.carousel-slide-picker-button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  display: flex;
+  color: variables.$primary;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: variables.$primary;
+
+  & > svg {
+    min-width: 90%;
+    min-height: 90%;
+  }
+
+  &.active {
+    background-color: black;
+  }
+
+  &:focus {
+    outline: solid 2px variables.$information;
+  }
+}
+
+#restaurant-best-customer-review-slides-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: variables.$spacing-md;
+}
+
+#carousel-slide-picker-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: variables.$spacing-sm;
+}
+
+#restaurant-best-customer-review-slides {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 variables.$spacing-sm;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  & > figure {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    min-height: 0;
+
+    & > blockquote {
+      text-align: center;
+      font-size: variables.$font-size-md * 1.2;
+      quotes: '“' '”' '‘' '’';
+
+      &::before {
+        font-size: 2em;
+        content: open-quote;
+        line-height: 0.1em;
+        vertical-align: -0.4em;
+      }
+
+      &::after {
+        content: close-quote;
+        font-size: 2em;
+        line-height: 0.1em;
+        vertical-align: -0.4em;
+      }
+    }
+
+    & > figcaption {
+      margin-top: variables.$spacing-sm;
+      text-align: center;
+      font-weight: 800;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$screen-md) {
+  #restaurant-best-customer-reviews-carousel {
+    & > button {
+      display: flex;
+    }
+  }
+
+  #restaurant-best-customer-review-slides {
+    & > figure {
+      & > blockquote {
+        font-size: variables.$font-size-md * 1.5;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: variables.$screen-lg) {
+  restaurant-best-customer-reviews {
+    padding: 0 variables.$spacing-xl;
+  }
+
+  #restaurant-best-customer-review-slides {
+    margin: 0 variables.$spacing-xl;
+
+    & > figure {
+      & > blockquote {
+        font-size: variables.$font-size-md * 1.5;
+      }
+    }
+  }
+}

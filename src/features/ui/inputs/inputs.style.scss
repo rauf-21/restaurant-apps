@@ -1,0 +1,13 @@
+@use '../../shared/styles/variables';
+
+@mixin input {
+  padding: variables.$spacing-sm;
+  border: 2px solid black;
+  border-radius: variables.$radius-sm;
+  font-size: variables.$font-size-md;
+  font-family: inherit;
+}
+
+.input {
+  @include input;
+}

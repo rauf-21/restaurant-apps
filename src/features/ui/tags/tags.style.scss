@@ -1,0 +1,16 @@
+@use '../../shared/styles/variables';
+
+@mixin tag {
+  padding: 0 variables.$spacing-sm * 0.5;
+  background-color: variables.$primary;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: black;
+  border-radius: variables.$radius-sm;
+  margin-right: variables.$spacing-sm * 0.5;
+}
+
+.tag {
+  @include tag;
+}

@@ -1,0 +1,7 @@
+@mixin label {
+  font-weight: 800;
+}
+
+.label {
+  @include label;
+}

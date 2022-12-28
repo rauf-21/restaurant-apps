@@ -27,14 +27,20 @@ module.exports = merge(common, {
   optimization: {
     runtimeChunk: 'single',
     minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
+    ],
   },
   plugins: [
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
       exclude: [/netlify.toml/],
     }),
-    new CompressionPlugin(),
+    new CompressionPlugin({
+      test: /\.js(\?.*)?$/i,
+    }),
     new HtmlWebpackChangeAssetsExtensionPlugin(),
   ],
 });

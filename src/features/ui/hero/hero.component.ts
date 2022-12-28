@@ -2,7 +2,16 @@ import { setChildren } from 'redom';
 import { replace } from 'feather-icons';
 
 import { $ } from '../../shared/utils/dom-utils';
-import { img, div, h1, p, a, i } from '../../shared/utils/dom-elements';
+import {
+  picture,
+  source,
+  img,
+  div,
+  h1,
+  p,
+  a,
+  i,
+} from '../../shared/utils/dom-elements';
 import './hero.style.scss';
 
 class UIHero extends HTMLElement {
@@ -10,11 +19,26 @@ class UIHero extends HTMLElement {
 
   get template() {
     return [
-      img({
-        src: './images/heros/hero-image.jpg',
-        width: 450,
-        alt: 'hero image',
-      }),
+      picture([
+        source({
+          srcset: './images/heros/hero-image-full.webp',
+          media: '(min-width: 1000px)',
+        }),
+        source({
+          srcset: './images/heros/hero-image-md.webp',
+          media: '(min-width: 700px)',
+        }),
+        source({
+          srcset: './images/heros/hero-image-sm.webp',
+          media: '(min-width: 0px)',
+        }),
+        img({
+          src: './images/heros/hero-image-sm.webp',
+          width: 450,
+          height: 1280,
+          alt: 'hero image',
+        }),
+      ]),
       div(
         {
           id: 'hero-content',

@@ -32,6 +32,7 @@ module.exports = merge(common, {
   plugins: [
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
+      exclude: ['./netlify.toml'],
     }),
     new CompressionPlugin(),
     new HtmlWebpackChangeAssetsExtensionPlugin(),

@@ -22,6 +22,7 @@ class RestaurantPreviewCard extends HTMLElement {
           restaurantPreview.pictureId,
           'small'
         ),
+        loading: 'lazy',
         alt: '',
       }),
       div(

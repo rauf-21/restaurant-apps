@@ -1,11 +1,11 @@
 [[headers]]                                                                      
-  for = "*.js"                                                             
+  for = "/dist/*.js"                                                             
   [headers.values]
     Content-Encoding = "js"
     Content-Type = "application/javascript"
   
 [[headers]]                                                                      
-  for = "*.js.gz"                                                             
+  for = "/dist/*.js.gz"                                                             
   [headers.values]
     Content-Encoding = "gzip"
     Content-Type = "application/javascript"

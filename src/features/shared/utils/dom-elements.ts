@@ -27,6 +27,8 @@ export const label = el.bind(null, 'label');
 export const input = el.bind(null, 'input');
 export const textarea = el.bind(null, 'textarea');
 
+export const picture = el.bind(null, 'picture');
+export const source = el.bind(null, 'source');
 export const img = el.bind(null, 'img');
 
 export const ul = el.bind(null, 'ul');

@@ -5,7 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-const ImageMinSvgo = require('imagemin-svgo');
+const ImageminSvgo = require('imagemin-svgo');
+const ImageminWebp = require('imagemin-webp-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -96,11 +97,12 @@ module.exports = {
           quality: 60,
           progressive: true,
         }),
-        ImageMinSvgo({
+        ImageminSvgo({
           quality: 50,
           progressive: true,
         }),
       ],
     }),
+    new ImageminWebp(),
   ],
 };
